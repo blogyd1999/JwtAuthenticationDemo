@@ -17,5 +17,11 @@ public class UserController : ControllerBase
             user = User.Identity?.Name,
             email = User.FindFirst("email")?.Value
         });
+        // var claims = User.Claims.Select(c => new
+        // {
+        //     c.Type,
+        //     c.Value
+        // });
+        // return Ok(claims);
     }
 }
