@@ -24,4 +24,11 @@ public class UserController : ControllerBase
         // });
         // return Ok(claims);
     }
+
+    [Authorize(Roles = "Admin")]
+    [HttpGet("admin")]
+    public IActionResult AdminOnly()
+    {
+        return Ok("Only admin can access this endpoint");
+    }
 }
